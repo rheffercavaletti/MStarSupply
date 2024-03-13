@@ -1,0 +1,7 @@
+FROM python:3.10.12
+WORKDIR /app
+COPY ./backend_api/. .
+RUN pip install -r requirements.txt
+RUN pip install debugpy -t /tmp
+#CMD ["python", "/tmp/debugpy", "--listen", "0.0.0.0:5678", "/app/run.py"]
+CMD ["python", "/tmp/debugpy", "--listen", "0.0.0.0:5678", "-m", "flask", "--app", "/app/run.py", "run", "--host", "0.0.0.0", "--port", "5000"]

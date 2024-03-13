@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  backend_api:
+    image: backend_api
+    container_name: mstarsupply_backend_api
+    build:
+      context: .
+      dockerfile: ./dockerfile_backend_api
+    links:
+      - db:mstarsupply.db
+    depends_on:
+      - db
+    ports: 
+      - "5101:5000"
+      - "5678:5678"
+    networks:
+      - internal
+    volumes:
+      - ./backend_api:/app
+
+  db:
+    container_name: mstarsupply_db
+    image: mysql:8.0.33
+    ports:
+      - "5100:3306"
+    networks:
+      - internal
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./db/mysql_data:/var/lib/mysql
+      - ./db/create-database.sql:/docker-entrypoint-initdb.d/init-script.sql
+
+  
+  frontend_web:
+    image: frontend_web
+    container_name: mstarsupply_frontend_web
+    build:
+      context: .
+      dockerfile: ./dockerfile_frontend_webclient
+    links:
+      - backend_api:mstarsupply.backend.api
+    depends_on:
+      - backend_api
+    ports:
+      - "5102:5102"
+    networks:
+      - internal
+    environment:
+      PORT: 5102
+    volumes:
+      - ./frontend_webclient/public:/react-app/public
+      - ./frontend_webclient/src:/react-app/src
+
+networks:
+  internal:
+    driver: bridge
