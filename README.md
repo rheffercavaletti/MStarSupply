@@ -13,6 +13,7 @@ Dentro da pasta raiz do repositório, execute o seguinte comando em um terminal:
 Com os containers rodando
 - Banco de Dados MySQL: <root:root@localhost:5100/mstarsupply>
 - API Backend: <http://localhost:5101/api/v0.1.0>
+- API Documentação Swagger: <http://localhost:5101/apidocs>
 - Frontend WebClient: <http://localhost:5102>
 
 ## Massa de dados de teste

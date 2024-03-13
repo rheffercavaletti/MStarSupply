@@ -3,8 +3,8 @@
 ## v0.1.0
 - __ - **api** - adicionar test coverage 
 - __ - **api** - adicionar testes para as controllers
-- __ - **api** - adicionar swagger
-- __ - **webclient** - adicionar style/css
+- _ok_ - **api** - adicionar swagger
+- _ok_ - **webclient** - adicionar style/css
 - __ - **webclient** - listagem e cadastro de locais de estoque para mercadoria
 - __ - **webclient** - listagem e cadastro de tipos de mercadoria
 - __ - **webclient** - listagem e cadastro de fabricantes
