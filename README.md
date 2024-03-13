@@ -17,3 +17,6 @@ Com os containers rodando
 
 ## Massa de dados de teste
 Para recriar o banco de dados com os dados de teste acesse a seguinte URL da API: <http://localhost:5101/api/v0.1.0/init_test_db>
+
+## Debugando no VSCode
+Abrindo a pasta raiz no VSCode o arquivo `.vscode/launch.json` irá carregar a opção de DEBUG **"Python backend_api Remote Attach"** que se conecta com a porta especificada na api para o debugpy - com o container da API rodando, execute essa opção de debug no VSCode
