@@ -13,14 +13,25 @@ function MainView() {
 
     return (
         <div>
+            <h3>Listagens e Cadastros</h3>
             <button style={buttonStyle} onClick={() => setActiveTab('mercadorias')}>
-                Gerenciamento de Mercadorias
+                Mercadorias
             </button>
+            <button style={buttonStyle} onClick={() => setActiveTab('mercadorias')}>
+                Fabricantes
+            </button>
+            <button style={buttonStyle} onClick={() => setActiveTab('mercadorias')}>
+                Tipos de Mercadoria
+            </button>
+            <button style={buttonStyle} onClick={() => setActiveTab('mercadorias')}>
+                Locais de Mercadoria
+            </button>
+            <br/><br/>
             <button style={buttonStyle} onClick={() => setActiveTab('movimentacao')}>
-                Movimentação de Estoque
+                Movimentação de Mercadorias
             </button>
             <button style={buttonStyle} onClick={() => setActiveTab('relatorio')}>
-                Gráfico de Estoque
+                Relatório dos Totais
             </button>
             
             {activeTab === 'mercadorias' && <MercadoriasList />}
