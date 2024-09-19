@@ -10,12 +10,16 @@ def get_mercadorias():
 
 def post_mercadoria(data):
     mercadoria = models.Mercadoria(
-        nome = data['nome'],
+		nome = data['nome'],
 		numero_registro = data['numero_registro'],
 		fabricante_id = data['fabricante_id'],
 		mercadoria_tipo_id = data['mercadoria_tipo_id'],
 		descricao = data['descricao']
     )
+    if not models.Fabricante.query.get(mercadoria.fabricante_id):
+        raise Exception(f'Fabricante <id={mercadoria.fabricante_id}> não encontrado')
+    if not models.Mercadoria_Tipo.query.get(mercadoria.mercadoria_tipo_id):
+        raise Exception(f'Tipo de Mercadoria <id={mercadoria.mercadoria_tipo_id}> não encontrado')
     models.db.session.add(mercadoria)
     models.db.session.commit()
 
