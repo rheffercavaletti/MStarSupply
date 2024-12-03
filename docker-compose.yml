@@ -3,12 +3,12 @@ version: '3.4'
 services:
   backend_api:
     image: backend_api
-    container_name: mstarsupply_backend_api
+    container_name: suppersupply_backend_api
     build:
       context: .
       dockerfile: ./dockerfile_backend_api
     links:
-      - db:mstarsupply.db
+      - db:suppersupply.db
     depends_on:
       - db
     ports: 
@@ -20,7 +20,7 @@ services:
       - ./backend_api:/app
 
   db:
-    container_name: mstarsupply_db
+    container_name: suppersupply_db
     image: mysql:8.0.33
     ports:
       - "5100:3306"
@@ -36,12 +36,12 @@ services:
   
   frontend_web:
     image: frontend_web
-    container_name: mstarsupply_frontend_web
+    container_name: suppersupply_frontend_web
     build:
       context: .
       dockerfile: ./dockerfile_frontend_webclient
     links:
-      - backend_api:mstarsupply.backend.api
+      - backend_api:suppersupply.backend.api
     depends_on:
       - backend_api
     ports:

@@ -1,3 +1,20 @@
+# Changelog SupperSupply
+
+## 20241203 - SupperSupply has been started!
+It's a fictional company that distributes suppers. With multiples warehouses, pick up and delivery points, a vehicle fleet moves suppers all around.
+My idea is to use multiple languages to create an IT ecosystem that provides for all company's needs regarding managing suppers and their whereabouts. The goal is to showoff my technical skills and abilities in a more complex scenario.
+
+Languages Goals: C#, Java, Python, Node, Javascript (and React), PHP?, maybe somethin in mobile?, maybe some Godot?
+I will compile a definitive list of technologies and concepts in README file.
+The final solution should require only git and docker to run, and a single `docker compose up` should be all that is needed.
+
+for now let's start with the first service: User service. It will be done in Java and MySql.
+
+
+
+
+---
+_OLD_
 # Changelog MStarSupply
 
 ## v0.1.0
