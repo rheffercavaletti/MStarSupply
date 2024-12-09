@@ -1,4 +1,17 @@
 # SupperSupply Solution
+It's a fictional company that distributes suppers. With multiples warehouses, pick up and delivery points, a vehicle fleet moves suppers all around.
+
+## Requirements
+**Docker** _(v27.3.1)_ up and running and at least X GB of RAM
+
+## Running
+From repository root directory execute command `docker compose up --build --detach`
+And to stop it `docker compose down`
+
+## Endpoints
+Databases:
+- User Service MySQL: <root:root@localhost:5100/suppersupply_user>
+
 
 
 _OLD_

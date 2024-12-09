@@ -1,1 +1,4 @@
+*.swp
+*.*~
+
 /db/mysql_data
